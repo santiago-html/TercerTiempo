@@ -1,0 +1,326 @@
+/* ========== SECCIÓN CARRITO ========== */
+.carrito-section {
+  padding: 60px 20px;
+  background: #0d0d0d;
+  min-height: 60vh;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== TÍTULO DEL CARRITO ========== */
+.titulo-carrito {
+  grid-column: 1 / -1;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ========== MENSAJE CARRITO VACÍO ========== */
+.carrito-vacio {
+  grid-column: 1 / -1;
+  color: #888888;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  padding: 40px;
+}
+
+/* ========== CARD ========== */
+.card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #00ff88;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+}
+
+/* Título del producto */
+.card h2 {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Todos los textos de la tarjeta */
+.card p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+/* Categoría */
+.card .categoria {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+/* Subtotal */
+.card .subtotal {
+  color: #00ff88;
+  font-weight: bold;
+}
+
+/* ========== BOTONES ========== */
+.card button {
+  padding: 10px 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+/* Botones + y - */
+.card .btn-cantidad {
+  background: #252525;
+  border: 1px solid #444;
+  color: #ffffff;
+  width: 42px;
+  padding: 10px 0;
+}
+
+.card .btn-cantidad:hover {
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+/* Botón eliminar */
+.card .btn-eliminar {
+  background: transparent;
+  border: 1px solid #ff4444;
+  color: #ff4444;
+}
+
+.card .btn-eliminar:hover {
+  background: #ff4444;
+  color: #ffffff;
+}
+
+/* ========== RESUMEN DEL CARRITO ========== */
+.resumen-carrito {
+  grid-column: 1 / -1;
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.resumen-carrito h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-size: 1.3rem;
+}
+
+.resumen-carrito h2 span {
+  color: #00ff88;
+}
+
+/* ========== BOTÓN FINALIZAR ========== */
+.btn-finalizar {
+  padding: 13px 24px;
+  background: #00ff88;
+  color: #0d0d0d;
+  border: 1px solid #00ff88;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-finalizar:hover {
+  background: transparent;
+  color: #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.25);
+}
+
+/* ========== FONDO DE LA FACTURA ========== */
+.factura-fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* ========== FACTURA ========== */
+.factura {
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  color: #111111;
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+.factura h2 {
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.factura-fecha {
+  color: #555555;
+  margin-bottom: 25px;
+}
+
+.producto-factura {
+  padding: 18px 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.producto-factura h3 {
+  margin-bottom: 10px;
+  font-family: 'Courier New', monospace;
+}
+
+.producto-factura p {
+  margin: 5px 0;
+}
+
+.total-factura {
+  margin-top: 25px;
+  padding-top: 20px;
+  text-align: right;
+  border-top: 2px solid #111111;
+}
+
+/* ========== BOTONES DE FACTURA ========== */
+.acciones-factura {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-imprimir,
+.btn-cerrar {
+  padding: 11px 20px;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-imprimir {
+  background: #00ff88;
+  color: #111111;
+  border: 1px solid #00ff88;
+}
+
+.btn-imprimir:hover {
+  background: #00cc6d;
+}
+
+.btn-cerrar {
+  background: transparent;
+  color: #ff4444;
+  border: 1px solid #ff4444;
+}
+
+.btn-cerrar:hover {
+  background: #ff4444;
+  color: #ffffff;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .carrito-section {
+    grid-template-columns: 1fr;
+    padding: 40px 15px;
+  }
+
+  .resumen-carrito {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-finalizar {
+    width: 100%;
+  }
+
+  .factura {
+    padding: 25px 18px;
+  }
+
+  .acciones-factura {
+    flex-direction: column;
+  }
+
+  .btn-imprimir,
+  .btn-cerrar {
+    width: 100%;
+  }
+}
+
+/* ========== IMPRESIÓN ========== */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .factura,
+  .factura * {
+    visibility: visible;
+  }
+
+  .factura-fondo {
+    position: absolute;
+    inset: 0;
+    background: white;
+    padding: 0;
+  }
+
+  .factura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .acciones-factura {
+    display: none;
+  }
+}

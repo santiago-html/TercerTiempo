@@ -1,0 +1,35 @@
+<section class="productos-section">
+  
+  <div class="productos-grid">
+    
+    @for (p of productos ; track p.id){
+    
+    @if (p.disponibilidad){
+    
+      <div class="producto-card">
+        <div class="producto-image">
+          <span class="producto-badge">NUEVO</span>
+          <img src="{{p.imagen}}" alt="{{p.nombre}}">
+        </div>
+        <div class="producto-body">
+          <span class="producto-categoria">{{p.categoria}}</span>
+          <h3 class="producto-title">{{p.nombre}}</h3>
+          <p class="producto-descripcion">{{p.descripcion}}</p>
+        </div>
+        <div class="producto-footer">
+          <span class="producto-precio">${{p.precio}}</span>
+          <button class="btn-meGusta"  (click)="agregarFavorito(p)" >Agregar a favorito</button>
+          <button class="btn-comprar"  (click)="agregarProducto(p)" >COMPRAR</button>
+        </div>
+      </div>
+    
+    }
+    
+    }
+    
+  </div>
+
+</section>
+
+
+

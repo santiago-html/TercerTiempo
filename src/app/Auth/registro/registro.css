@@ -1,0 +1,306 @@
+/* ========== RESET Y VARIABLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0d0d0d;
+  --bg-panel: #1a1a1a;
+  --bg-input: #252525;
+  --accent: #00ff88;
+  --accent-dim: #00cc6a;
+  --text: #e0e0e0;
+  --text-dim: #888;
+  --border: #333;
+  --error: #ff4444;
+}
+
+/* ========== BODY CENTRADO ========== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== OVERRIDE BOOTSTRAP ========== */
+body {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  background: #0d0d0d !important;
+  font-family: 'Arial', sans-serif !important;
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 450px !important;
+  padding: 20px !important;
+}
+
+/* ========== CAJA DEL FORMULARIO ========== */
+
+.auth-box {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Borde decorativo superior */
+.auth-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* ========== HEADER ========== */
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.auth-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo-icon {
+  color: var(--accent);
+  animation: blink 1s infinite;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.auth-led {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent);
+  animation: blink 0.5s infinite alternate;
+}
+
+/* ========== TÍTULOS ========== */
+.auth-title {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.auth-subtitle {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ========== FORMULARIO ========== */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  color: var(--text);
+  font-size: 1rem;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+.form-group input::placeholder {
+  color: var(--text-dim);
+}
+
+/* ========== OVERRIDE INPUTS DE BOOTSTRAP ========== */
+.form-control {
+  background: #252525 !important;
+  border: 1px solid #333 !important;
+  color: #e0e0e0 !important;
+  border-radius: 6px !important;
+  padding: 14px 16px !important;
+  font-size: 1rem !important;
+}
+
+.form-control:focus {
+  background: #252525 !important;
+  border-color: #00ff88 !important;
+  color: #e0e0e0 !important;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2) !important;
+}
+
+.form-control::placeholder {
+  color: #888 !important;
+}
+
+/* ========== CHECKBOX ========== */
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-dim);
+}
+
+.checkbox-group a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.checkbox-group a:hover {
+  text-decoration: underline;
+}
+
+/* ========== BOTÓN ========== */
+.btn-register {
+  background: var(--accent);
+  color: var(--bg-dark);
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn-register:hover {
+  background: var(--accent-dim);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.btn-register:active {
+  transform: scale(0.98);
+}
+
+/* Override Bootstrap button */
+.btn-register.btn {
+  padding: 16px !important;
+  border-radius: 6px !important;
+}
+
+/* ========== FOOTER ========== */
+.auth-footer {
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.auth-footer p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 30px 20px;
+  }
+  
+  .auth-title {
+    font-size: 1.3rem;
+  }
+}
