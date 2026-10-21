@@ -1,0 +1,136 @@
+/* ========== NAVBAR ========== */
+.navbar {
+  background: #0d0d0d !important;
+  border-bottom: 1px solid #222;
+  padding: 15px 20px;
+}
+
+/* Marca */
+.navbar-brand {
+  font-family: 'Courier New', monospace;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff !important;
+  letter-spacing: 2px;
+}
+
+.navbar-brand .accent {
+  color: #00ff88;
+}
+
+/* Links */
+.nav-link {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #888 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  padding: 8px 15px !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #00ff88 !important;
+}
+
+/* Link deshabilitado */
+.nav-link.disabled {
+  color: #444 !important;
+  pointer-events: none;
+}
+
+/* Botón toggler */
+.navbar-toggler {
+  border: 1px solid #333 !important;
+  padding: 8px 10px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2300ff88' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Menú desplegable */
+.navbar-collapse {
+  background: #0d0d0d;
+  padding: 15px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Lista de items */
+.navbar-nav {
+  gap: 5px;
+}
+
+.nav-item {
+  border-bottom: 1px solid #222;
+}
+
+.nav-item:last-child {
+  border-bottom: none;
+}
+
+/* Buscador */
+.form-control {
+  background: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 10px 15px !important;
+}
+
+.form-control:focus {
+  background: #1a1a1a !important;
+  border-color: #00ff88 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2) !important;
+}
+
+.form-control::placeholder {
+  color: #666 !important;
+}
+
+/* Botón buscar */
+.btn-outline-success {
+  border: 1px solid #00ff88 !important;
+  color: #00ff88 !important;
+  border-radius: 6px !important;
+  padding: 10px 15px !important;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+  background: #00ff88 !important;
+  color: #0d0d0d !important;
+}
+
+/* LED decorativo en brand */
+.navbar-brand::before {
+  content: '◉';
+  color: #00ff88;
+  margin-right: 8px;
+  animation: blink 1s infinite;
+}
+
+/* Animación LED */
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    margin-top: 15px;
+  }
+  
+  .nav-item {
+    padding: 10px 0;
+  }
+  
+  .d-flex {
+    margin-top: 15px;
+  }
+}

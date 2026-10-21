@@ -1,0 +1,63 @@
+<section class="carrito-section">
+
+  <h1>Carrito de compras</h1>
+
+  @if (carritoProducto.length === 0) {
+    <p>El carrito está vacío.</p>
+  }
+
+  @for (p of carritoProducto; track p.id) {
+    <div class="card">
+      <h2>{{ p.nombre }}</h2>
+
+      <p>Categoría: {{ p.categoria }}</p>
+      <p>Precio unitario: ${{ p.precio }}</p>
+      <p>Cantidad: {{ p.cantidad }}</p>
+      <p>Subtotal: ${{ p.precio * p.cantidad }}</p>
+
+      <button (click)="disminuir(p.id)">-</button>
+      <button (click)="aumentar(p.id)">+</button>
+      <button (click)="eliminar(p.id)">Eliminar</button>
+    </div>
+  }
+
+  @if (carritoProducto.length > 0) {
+    <div class="resumen-carrito">
+      <h2>Total: ${{ calcularTotal() }}</h2>
+
+      <button class="btn-finalizar" (click)="finalizarCompra()">
+        Finalizar compra
+      </button>
+    </div>
+  }
+
+</section>
+
+@if (mostrarFactura) {
+  <section class="factura">
+
+    <h2>Factura de compra</h2>
+
+    <p><strong>Fecha:</strong> {{ fechaFactura }}</p>
+
+    @for (p of carritoProducto; track p.id) {
+      <div class="producto-factura">
+        <p><strong>Producto:</strong> {{ p.nombre }}</p>
+        <p>Precio: ${{ p.precio }}</p>
+        <p>Cantidad: {{ p.cantidad }}</p>
+        <p>Subtotal: ${{ p.precio * p.cantidad }}</p>
+      </div>
+    }
+
+    <h2>Total de la compra: ${{ calcularTotal() }}</h2>
+
+    <button (click)="imprimirFactura()">
+      Imprimir factura
+    </button>
+
+    <button (click)="cerrarFactura()">
+      Cerrar
+    </button>
+
+  </section>
+}

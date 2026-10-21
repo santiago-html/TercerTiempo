@@ -1,0 +1,59 @@
+ <section class="favoritos-section">
+
+  <div class="favoritos-header">
+    <h2 class="favoritos-title">PRODUCTOS FAVORITOS</h2>
+    <span class="favoritos-count">
+      {{ productoFav.length }} productos
+    </span>
+  </div>
+
+  <div class="favoritos-grid">
+
+    @for (p of productoFav ; track p.id) {
+
+@if (p.disponibilidad ){
+      <div class="favorito-card">
+
+        <div class="favorito-image">
+          <img src="{{p.imagen}}" alt="{{p.nombre}}">
+        </div>
+
+        <div class="favorito-body">
+          <span class="favorito-categoria">
+            {{p.categoria}}
+          </span>
+
+          <h3 class="favorito-title">
+            {{p.nombre}}
+          </h3>
+
+          <p class="favorito-descripcion">
+            {{p.descripcion}}
+          </p>
+        </div>
+
+        <div class="favorito-footer">
+
+          <span class="favorito-precio">
+            ${{p.precio}}
+          </span>
+
+
+          <button class="btn-comprar"  (click)="agregarProducto(p)" >COMPRAR</button>
+
+          <button
+            class="btn-eliminar"
+            (click)="eliminarFavorito(p.id)">
+            QUITAR DE FAVORITOS
+          </button>
+
+        </div>
+
+      </div>
+      }
+
+    }
+
+  </div>
+
+</section>
